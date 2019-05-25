@@ -13,7 +13,7 @@ class PostViewAPI(GenericAPIView):
     permission_classes = [permissions.IsAuthenticated, ]
 
     def get(self, request, *args, **kwargs):
-        qs = Post.objects.all()
+        qs = self.get_queryset()
         serializer = PostSerializer(qs, many=True)
         data = serializer.data
         return Response(data=data)
