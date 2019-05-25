@@ -58,7 +58,8 @@ REST_FRAMEWORK = {
         'rest_framework.authentication.BasicAuthentication',
         'rest_framework.authentication.SessionAuthentication',
         'rest_framework.authentication.TokenAuthentication',
-    )
+    ),
+    'EXCEPTION_HANDLER': 'posts.utils.custom_exception_handler'
 }
 
 ROOT_URLCONF = 'testproj.urls'
