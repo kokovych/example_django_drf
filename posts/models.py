@@ -11,6 +11,8 @@ class Post(models.Model):
     date = models.DateTimeField(auto_now=True)
     user = models.ForeignKey(User)
 
+    image = models.ImageField(upload_to='image_store')
+
     def __str__(self):
         return self.title
 
